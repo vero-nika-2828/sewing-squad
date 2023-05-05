@@ -18,4 +18,4 @@ app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
 db = SQLAlchemy(app)
 
 # Import routes from local sewingsquad package
-# from swewingsquad import routes
+from sewingsquad import routes  # noqa
