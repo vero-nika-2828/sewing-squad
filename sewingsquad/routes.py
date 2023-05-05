@@ -8,6 +8,6 @@ def landing_page():
     return render_template("base.html")
 
 
-@app.route("/")
+@app.route("/register", methods=["GET", "POST"])
 def register():
     return render_template("register.html")
