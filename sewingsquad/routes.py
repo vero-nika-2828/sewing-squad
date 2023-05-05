@@ -1,6 +1,7 @@
 # Imports
 from flask import render_template
 from sewingsquad import app, db
+from sewingsquad.models import Users, SewingWorks
 
 
 @app.route("/")
