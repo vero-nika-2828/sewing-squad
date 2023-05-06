@@ -1,4 +1,4 @@
-frpm sewingsquad import db
+from sewingsquad import db
 
 
 class Users(db.Model):
@@ -7,16 +7,16 @@ class Users(db.Model):
     username = db.Column(db.String(15), unique=True, nullable=False)
     email = db.Column(db.String(72), unique=True, nullable=False)
     password = db.Column(db.String(10), nullable=False)
-    users_works = db.realtionship(
+    users_works = db.relationship(
         "SewingWorks", backref="users", cascade="all, delete", lazy=True)
 
     def __repr__(self):
-        return self
+        return self.username
 
 
 class SewingWorks(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    project_name =  db.Column(
+    project_name = db.Column(
         db.String(60), unique=True, nullable=False)
     category = db.Column(
         db.String(15), nullable=False)
@@ -34,11 +34,8 @@ class SewingWorks(db.Model):
         db.String(250), nullable=False)
     users_id = db.Column(
         db.Integer, db.ForeignKey(
-            "users.id), nullable=False)
+            "users.id"), nullable=False)
 
     def __repr__(self):
         return self
-
-    
-
-
+        print("SewingWorks database is pulled")

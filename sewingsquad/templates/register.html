@@ -3,16 +3,19 @@
 {% block content %}
 
 <div class="row">
+    <!--Registration form-->
     <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('register') }}">
         <div class="card-panel red lighten-5">
             <div class="row">
+                <!--Name input field-->
                 <div class="input-field col s12 m6 offset-m3">
-                    <i class="material-icons prefix">account_circle</i>
+                    <i class="material-icons prefix">face</i>
                     <input id="firstname" name="firstname" type="text" class="validate">
                     <label for="firstname">Your Name</label>
                 </div>
             </div>
 
+            <!--Username input field-->
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
                     <i class="material-icons prefix">person_add</i>
@@ -22,6 +25,7 @@
                 </div>
             </div>
 
+            <!--Email input field-->
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
                     <i class="material-icons prefix">email</i>
@@ -30,15 +34,18 @@
                 </div>
             </div>
 
-
+            <!--Password input field-->
             <div class="row">
                 <div class="row">
                     <div class="input-field col s12 m6 offset-m3">
                         <i class="material-icons prefix">lock</i>
                         <input id="password" name="password" type="password" class="validate">
                         <label for="password">Password</label>
-                        <span class="helper-text" data-error="wrong" data-success="right">Pasword must be between 5 -10 characters long. Allowed characters: a-z A-Z
-                            0-9</span>
+                        <span class="helper-text" data-error="wrong" data-success="right">
+                            <i class="material-icons prefix helper-text password-req" data-error="wrong"
+                                data-success="right" data-position="right"
+                                data-tooltip="Pasword must be between 5 -10 characters long. Allowed characters: a-z A-Z 0-9+">info_outline</i>
+                        </span>
                     </div>
                 </div>
             </div>
